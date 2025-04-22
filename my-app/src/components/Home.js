@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import rotundaVideo from '../assets/Rotunda.mp4';
 
 const Home = () => {
   return (
     <div className="home">
       <section className="hero">
+        <video autoPlay muted loop className="hero-video">
+          <source src={rotundaVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="hero-content">
           <h2>UVA's leading global long-short equity fund</h2>
           <h1>Global Markets Group</h1>

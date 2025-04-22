@@ -26,6 +26,13 @@
   width: auto;
 }
 
+/* Logo text replacing the image */
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #232D4B;
+}
+
 .nav-menu ul {
   display: flex;
   list-style: none;
@@ -84,6 +91,26 @@
   position: relative;
 }
 
+/* Hide submenu by default */
+.has-submenu .submenu {
+  display: none;
+}
+
+/* Show submenu on hover */
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Rotate arrow on hover */
+.has-submenu:hover > span i {
+  transform: rotate(180deg);
+}
+
+/* Remove click-only display styles */
+.submenu.show {
+  display: none;
+}
+
 .submenu {
   display: none;
   position: absolute;
@@ -95,10 +122,6 @@
   min-width: 200px;
   z-index: 100;
   border-radius: 4px;
-}
-
-.submenu.show {
-  display: block;
 }
 
 .submenu li {

@@ -88,23 +88,17 @@
 
 /* Gallery Grid */
 .gallery-grid {
-  /* Masonry-style layout: flow items into columns for a collage effect */
-  column-count: 3;
-  column-gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
 }
 
 .gallery-item {
-  /* Inline-block in columns, no fixed height */
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 25px;
   cursor: pointer;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  break-inside: avoid;
 }
 
 .gallery-item:hover {
