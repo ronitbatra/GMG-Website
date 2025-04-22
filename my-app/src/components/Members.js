@@ -5,7 +5,6 @@ import ChristianMinImage from '../assets/Christian_min.jpg';
 import ArtinSaadatImage from '../assets/Artin_saadat.jpg';
 const Members = () => {
   const [selectedYear, setSelectedYear] = useState('all');
-  const [selectedMajor, setSelectedMajor] = useState('all');
 
   const members = [
     { id: 1, name: 'Jack Cooper', year: '2nd Year', major: 'Finance', role: 'Analyst', avatar: JackCooperImage },
@@ -15,8 +14,7 @@ const Members = () => {
   ];
 
   const filtered = members.filter(m => 
-    (selectedYear === 'all' || m.year === selectedYear) &&
-    (selectedMajor === 'all' || m.major.includes(selectedMajor))
+    selectedYear === 'all' || m.year === selectedYear
   );
 
   return (
