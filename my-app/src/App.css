@@ -1,5 +1,111 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.5;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Global container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: #232D4B; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #7f1416;
+}
+
+/* Button styles */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* For Font Awesome icons (if used) */
+.fas, .fab {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Utility classes */
+.text-center {
   text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Import Font Awesome (uncomment if needed) */
+/* 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+*/
+
+/* Media queries for global styles */
+@media (max-width: 992px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
 }
 
 .App-logo {
@@ -35,4 +141,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Placeholder background override */
+.gallery-image-placeholder,
+.modal-image-placeholder,
+.insta-placeholder-image,
+.insta-profile-pic,
+.avatar-placeholder {
+  background-image: url('./assets/UVA-campus.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
