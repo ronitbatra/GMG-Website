@@ -11,6 +11,7 @@ import CalMassaroImage from '../assets/Cal_massaro.jpg';
 import AndrewRizziImage from '../assets/Andrew_rizzi.jpg';
 import ShrutaThumImage from '../assets/Shruta_thum.jpg';
 import LarinaYuImage from '../assets/Larina_yu.jpg';
+
 const ExecutiveBoard = () => {
   const executives = [
     { 
@@ -139,7 +140,11 @@ const ExecutiveBoard = () => {
               <div className="exec-card" key={exec.id}>
                 <div className="exec-avatar">
                   {exec.avatar ? (
-                    <img src={exec.avatar} alt={exec.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img 
+                      src={exec.avatar} 
+                      alt={exec.name} 
+                      loading="lazy"
+                    />
                   ) : (
                     <div className="avatar-placeholder">
                       {exec.name.split(' ').map(n => n[0]).join('')}

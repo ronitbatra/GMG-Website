@@ -144,42 +144,132 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: 15px 0;
+  }
+  
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  
   .menu-icon {
     display: flex;
+    z-index: 1001;
   }
 
   .nav-menu {
     position: fixed;
-    top: 80px;
-    left: -100%;
+    top: 70px;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
     background-color: #fff;
-    transition: left 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
     overflow-y: auto;
+    transform: translateX(-100%);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
 
   .nav-menu.active {
-    left: 0;
+    transform: translateX(0);
   }
 
   .nav-menu ul {
     flex-direction: column;
-    padding: 20px;
+    padding: 15px;
   }
 
   .nav-menu li {
-    margin: 15px 0;
+    margin: 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-menu a, .nav-menu span {
+    display: block;
+    font-size: 18px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .nav-menu a:active, .nav-menu span:active {
+    background-color: rgba(35, 45, 75, 0.05);
+  }
+  
+  .has-submenu > span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fas {
+    transition: transform 0.3s ease;
   }
 
   .submenu {
     position: static;
     box-shadow: none;
-    padding: 10px 0 10px 20px;
+    padding: 5px 0 5px 15px;
     display: none;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
   }
-
+  
   .submenu.show {
     display: block;
+    max-height: 300px;
+    padding: 10px 0 10px 15px;
+  }
+  
+  .submenu li {
+    padding: 5px 0;
+    border-bottom: none;
+  }
+  
+  .submenu a {
+    font-size: 16px;
+    color: #444;
+    padding: 8px 10px;
+  }
+
+  /* Improve menu icon animation */
+  .menu-icon span {
+    transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .menu-icon.active span {
+    background-color: #232D4B;
+  }
+  
+  .menu-icon.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-icon.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  
+  .menu-icon.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Body scroll lock when menu is open */
+  body.menu-open {
+    overflow: hidden;
   }
 } 
